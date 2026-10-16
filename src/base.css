@@ -1,0 +1,405 @@
+/* Provided layout. Add interaction styles in motion.css. */
+
+:root {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #182f29;
+  background: #edf1ed;
+  font-synthesis: none;
+
+  --accent: #246b52;
+  --ink: #182f29;
+  --muted: #617169;
+  --line: #ccd7cf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: wait;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #3c866b;
+  outline-offset: 5px;
+}
+
+a {
+  color: inherit;
+}
+
+/* 전체 화면 */
+
+.shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: auto;
+}
+
+/* 왼쪽 소개 영역 */
+
+.intro {
+  padding: 50px 58px;
+  background: #dce8df;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.intro-copy {
+  margin: auto 0;
+  padding: 55px 0;
+}
+
+.eyebrow {
+  margin: 0 0 21px;
+  color: #557361;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.intro h1 {
+  margin: 0 0 34px;
+  font-size: clamp(48px, 5.4vw, 78px);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.intro-copy > p:last-child {
+  max-width: 280px;
+  color: #4f695b;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.intro-footer {
+  color: #4c6b58;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+/* 오른쪽 로그인 영역 */
+
+.workspace {
+  display: flex;
+  min-width: 0;
+  padding: 48px 55px 24px;
+  background: #fbfcf9;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.demo-label {
+  margin: 0 0 32px;
+  color: #5d7165;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.card-shell {
+  width: 100%;
+  max-width: 420px;
+  min-height: 420px;
+  margin: auto;
+}
+
+.card h2 {
+  margin: 0 0 17px;
+  overflow-wrap: anywhere;
+  font-size: 48px;
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.card h2:focus {
+  outline: none;
+}
+
+.description {
+  margin: 0 0 31px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 입력 폼 */
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.field input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.field input:focus {
+  outline: 2px solid #537b65;
+  outline-offset: 2px;
+}
+
+.field input::placeholder {
+  color: #718278;
+}
+
+.field small {
+  display: block;
+  margin-top: 10px;
+  color: #637269;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* 메인 버튼 */
+
+.primary {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.primary:disabled {
+  opacity: 0.65;
+}
+
+.primary > span:last-child:not(:first-child) {
+  margin-left: auto;
+}
+
+.primary .spinner + span {
+  margin-right: auto;
+  margin-left: 0 !important;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ffffff55;
+  border-top-color: #fff;
+  border-radius: 50%;
+  flex: none;
+}
+
+/* 메시지 */
+
+.error-message {
+  min-height: 22px;
+  margin: 0 0 18px;
+  color: #a2393f;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.is-error input[aria-invalid="true"] {
+  border-color: #b35358;
+}
+
+.notice {
+  min-height: 20px;
+  margin: 24px 0 0;
+  color: #8a5739;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.demo-note {
+  margin: 18px 0 0;
+  color: #697b6d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* 로그인 완료 화면 */
+
+.profile-details {
+  margin: 30px 0;
+  padding: 23px 0;
+  border-block: 1px solid #d7e1d9;
+}
+
+.profile-details dt {
+  margin-bottom: 12px;
+  color: #62786b;
+  font-size: 12px;
+}
+
+.profile-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.reload-hint {
+  margin: 0 0 30px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Sign in / Sign up 전환 버튼 */
+
+.switch-copy {
+  margin: 24px 0 0;
+  color: #617169;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.text-button {
+  padding: 4px 5px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.text-button:disabled {
+  cursor: wait;
+  opacity: 0.4;
+}
+
+/* Sign up 화면 간격 */
+
+.signup-shell .field {
+  margin-bottom: 15px;
+}
+
+.signup-shell .field input {
+  padding: 11px 14px;
+}
+
+.signup-shell .field label {
+  margin-bottom: 7px;
+}
+
+.signup-shell .description {
+  margin-bottom: 22px;
+}
+
+.signup-shell .eyebrow {
+  margin-bottom: 14px;
+}
+
+.signup-shell .field small {
+  margin-top: 6px;
+}
+
+.signup-shell .switch-copy {
+  margin-top: 17px;
+}
+
+.signup-shell .error-message {
+  margin-bottom: 12px;
+}
+
+.panel-leave-active {
+  pointer-events: none;
+}
+
+/* 모바일 */
+
+@media (max-width: 760px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    padding: 25px 26px;
+  }
+
+  .intro-copy,
+  .intro-footer {
+    display: none;
+  }
+
+  .workspace {
+    min-height: calc(100dvh - 73px);
+    padding: 28px 26px;
+  }
+
+  .card-shell {
+    min-height: 410px;
+  }
+
+  .card h2 {
+    font-size: 43px;
+  }
+
+  .demo-label {
+    margin-bottom: 35px;
+  }
+
+  .notice {
+    margin-top: 12px;
+  }
+
+  .demo-note {
+    margin-top: 10px;
+  }
+}
